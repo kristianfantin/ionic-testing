@@ -1,0 +1,21 @@
+<ion-view view-title="Cervejas">
+  <ion-nav-buttons side="secondary">
+    <button class="button button-clear" ui-sref="menu.cadastroCervejas">
+      <i class="icon ion-android-add"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="cerveja in vm.cervejas">
+        <h2>{{cerveja.name}}</h2>
+        <ion-option-button
+            class="button-dark"
+            ng-click="vm.remove(cerveja)"
+        >
+          <i class="icon ion-trash-a"></i>
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+</ion-view>

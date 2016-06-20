@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavaScriptLibraryMappings">
+    <file url="file://$PROJECT_DIR$" libraries="{ionic-testing node_modules}" />
+    <file url="file://$PROJECT_DIR$/tests" libraries="{karma-jasmine-DefinitelyTyped}" />
+    <file url="PROJECT" libraries="{karma-jasmine-DefinitelyTyped}" />
+  </component>
+</project>

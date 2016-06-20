@@ -1,0 +1,15 @@
+<ion-view view-title="Menu">
+  <ion-content>
+
+    <div ng-repeat="itemMenu in vm.menuCompleto()">
+      <div class = "row">
+        <div class = "col"
+             ng-click="vm.selecionaItem(itemMenu)">
+          {{itemMenu.descricao}}
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+
+</ion-view>

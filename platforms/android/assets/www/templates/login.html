@@ -1,0 +1,24 @@
+<ion-view view-title="Login">
+  <div class="bar bar-header bar-light">
+    <h1 class="title">iBeer</h1>
+  </div>
+  
+  <ion-content class="has-header">
+    <div class="list list-inset">
+      <div class="item item-input item-stacked-label">
+        <input id="user" type="text" placeholder="Nome" ng-model="vm.user" style="text-transform: uppercase">
+      </div>
+      <div class="item item-input item-stacked-label">
+        <input type="password" placeholder="Senha" ng-model="vm.senha" style="text-transform: uppercase">
+      </div>
+    </div>
+    <div class="list list-inset">
+      <button class="button button-block button-positive" ng-click="vm.btnOk()">
+        OK
+      </button>
+      <button class="button button-block button-energized" ng-click="vm.btnCancel()">
+        Cancel
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,5 @@
+{
+  "proxy": "http://kristianpereira:kristian@db1@172.16.0.15:3128",
+  "https-proxy": "http://kristianpereira:kristian@db1@172.16.0.15:3128",
+  "directory": "www/lib"
+}

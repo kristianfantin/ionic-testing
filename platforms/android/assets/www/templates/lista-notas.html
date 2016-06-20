@@ -1,0 +1,58 @@
+<ion-view view-title="Notas">
+  <ion-nav-buttons side="secondary">
+    <button class="button button-clear" ui-sref="menu.cadastroNotas">
+      <i class="icon ion-android-add"></i>
+    </button>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="nota in vm.notas | orderBy: ['status', '-data'] " class=" item-button-right">
+        <span ng-class="nota.status == 'FECHADO' ? 'assertive' : 'positive'"
+              style="display: block">{{nota.status}}</span>
+        <h2 style="display: inline-block">{{nota.cerveja.name}}</h2>
+        <p>{{nota.data | date:"dd/MM/yyyy hh:mm"}}</p>
+
+        <p>Local: <b>{{nota.local}}</b></p>
+        <p>Custo Unitário: <b>{{ nota.custoUnitario | currency }}</b></p>
+        <p> Quantidade: <b>{{nota.quantidade}}</b> </p>
+        <p>Total: <b>{{  nota.custoUnitario * nota.quantidade | currency }}</b></p>
+        <button ng-show="vm.mostraParaEmConsumo(nota)"
+                ng-click="vm.lessQuantidade(nota)"
+                class="button button-large"
+                style="position: absolute; top: 70px; right: 0">
+          <i class="icon ion-minus-circled"></i>
+        </button>
+        <button ng-show="vm.mostraParaEmConsumo(nota)"
+                ng-click="vm.addQuantidade(nota)"
+                class="button button-large"
+                style="position: absolute; top: 30px; right: 0">
+          <i class="icon ion-plus-circled"></i>
+        </button>
+          <ion-option-button
+              class="button-dark"
+              ng-click="vm.remove(nota)"
+          >
+            <i class="icon ion-trash-a"></i>
+          </ion-option-button>
+
+          <ion-option-button
+              ng-show="vm.mostraParaFechado(nota)"
+              class="button-positive"
+              ng-click="vm.abreConsumo(nota)"
+          >
+            <i class="icon ion-beer"></i>
+          </ion-option-button>
+
+          <ion-option-button
+              ng-show="vm.mostraParaEmConsumo(nota)"
+              class="button-assertive"
+              ng-click="vm.fechaConsumo(nota)"
+          >
+            <i class="icon ion-clipboard"></i>
+          </ion-option-button>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+</ion-view>

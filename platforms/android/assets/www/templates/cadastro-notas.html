@@ -1,0 +1,36 @@
+<ion-view>
+  <ion-nav-buttons side="secondary">
+    <button class="button button-clear" ng-click="vm.salvar()">
+      <i class="icon ion-checkmark"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content>
+    <ion-list>
+
+      <div class="item item-select item-stacked-label">
+        <label for="cerveja">Cerveja:</label>
+        <select name="cerveja" id="cerveja"
+                ng-options="cerveja.name for cerveja in vm.cervejas track by cerveja.name"
+                ng-model="vm.cerveja"
+                style="width: 82%"
+                ></select>
+      </div>
+
+      <div class="item item-input item-stacked-label">
+        <input type="text"
+               ng-model="vm.local",
+               style="text-transform: uppercase"
+               placeholder="Local (ex.: Bar do Zé)">
+      </div>
+
+      <div class="item item-input item-stacked-label">
+        <input type="number"
+               ng-model="vm.custoUnitario"
+               min="0"
+               placeholder="Valor da Cerveja">
+      </div>
+
+    </ion-list>
+  </ion-content>
+</ion-view>
